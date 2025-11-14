@@ -10,6 +10,23 @@ body {
   background: #f9fafb;
   color: #1f2937;
   line-height: 1.7;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* GLOBAL ANIMATIONS */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
 /* HEADER */
@@ -17,14 +34,15 @@ body {
   background: #0f172a;
   color: #fff;
   text-align: center;
-  padding: 40px 20px;
+  padding: clamp(30px, 6vw, 50px) 20px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  animation: slideUp 1s ease forwards;
 }
 .main-header h1 {
-  font-size: 38px;
+  font-size: clamp(28px, 5vw, 42px);
 }
 .main-header p {
-  font-size: 18px;
+  font-size: clamp(16px, 3vw, 20px);
   color: #4ade80;
 }
 
@@ -39,7 +57,7 @@ body {
 .navbar ul {
   display: flex;
   justify-content: center;
-  gap: 22px;
+  gap: clamp(12px, 3vw, 25px);
   list-style: none;
 }
 .navbar ul li a {
@@ -50,6 +68,7 @@ body {
 }
 .navbar ul li a:hover {
   color: #4ade80;
+  text-shadow: 0 0 10px #4ade80;
 }
 
 /* PROFILE */
@@ -58,42 +77,46 @@ body {
   padding: 25px 20px;
 }
 .profile-pic {
-  width: 170px;
-  height: 170px;
+  width: clamp(140px, 20vw, 180px);
+  height: clamp(140px, 20vw, 180px);
   border-radius: 50%;
   border: 5px solid #4ade80;
   object-fit: cover;
   box-shadow: 0 0 25px rgba(0,255,120,0.5);
-  transition: 0.3s;
+  transition: 0.4s;
+  animation: zoomIn 1.2s ease forwards;
 }
 .profile-pic:hover {
-  transform: scale(1.05);
+  transform: scale(1.08) rotate(2deg);
 }
 
+/* PERSONAL SUMMARY */
 .personal-summary {
   max-width: 750px;
   margin: 20px auto;
   font-size: 17px;
   color: #334155;
   padding: 0 10px;
+  animation: slideUp 1.3s ease forwards;
 }
 
 /* SECTION */
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
   padding: 30px 20px;
 }
 section {
   background: #fff;
   margin-bottom: 35px;
-  padding: 30px;
+  padding: clamp(20px, 4vw, 35px);
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  animation: fadeIn 1.2s ease forwards;
 }
 h2 {
   text-align: center;
-  font-size: 24px;
+  font-size: clamp(20px, 4vw, 28px);
   margin-bottom: 20px;
 }
 
@@ -119,17 +142,17 @@ h2 {
   align-items: center;
   transition: 0.35s;
   opacity: 0;
-  transform: translateY(25px);
+  animation: zoomIn 0.8s ease forwards;
 }
-
-.lang-item.show {
-  opacity: 1;
-  transform: translateY(0);
-}
+.lang-item:nth-child(1) { animation-delay: 0.2s; }
+.lang-item:nth-child(2) { animation-delay: 0.4s; }
+.lang-item:nth-child(3) { animation-delay: 0.6s; }
+.lang-item:nth-child(4) { animation-delay: 0.8s; }
 
 .lang-item:hover {
   background: #dbeafe;
-  transform: translateY(-8px) scale(1.08);
+  transform: translateY(-8px) scale(1.15);
+  box-shadow: 0 0 20px rgba(37,99,235,0.6);
 }
 
 .lang-item i {
@@ -165,9 +188,10 @@ h2 {
   padding: 20px;
   text-align: center;
   transition: 0.3s;
+  animation: slideUp 1s ease forwards;
 }
 .cert-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) scale(1.05);
 }
 
 .cert-photo {
@@ -182,14 +206,15 @@ h2 {
   padding: 35px 20px;
   color: white;
   text-align: center;
+  font-size: clamp(14px, 2vw, 16px);
 }
 
-/* RESPONSIVE FIXES – PERFECT MOBILE */
+/* RESPONSIVE FIXES */
 @media (max-width: 600px) {
-  .main-header h1 { font-size: 28px; }
-  .profile-pic { width: 140px; height: 140px; }
+  .main-header h1 { font-size: 24px; }
+  .profile-pic { width: 120px; height: 120px; }
   .lang-box { grid-template-columns: repeat(3,1fr); }
   .lang-item { width: 80px; height: 80px; }
   .lang-item i { font-size: 24px; }
-  h2 { font-size: 20px; }
+  h2 { font-size: 18px; }
 }
