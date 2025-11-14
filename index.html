@@ -4,42 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shaher Mamdouh - CV</title>
-  <link rel="stylesheet" href="./cv.css" />
+
+  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./cv.css" />
 </head>
+
 <body>
 
   <!-- Header -->
   <header class="main-header">
     <h1>Shaher Mamdouh</h1>
-    <p>Front-End Developer</p>
+    <p>🔒 Cybersecurity Student | Networks & Programming | Linux & Ethical Hacking</p>
   </header>
 
-  <!-- 🔗 Navbar مربوط بالسكاشن -->
-<nav class="navbar">
-  <ul>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#certificates">Certificates</a></li>
-    <li><a href="#languages">Languages</a></li>
-    <li><a href="#objective">Objective</a></li>
-  </ul>
-</nav>
-
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#languages">Languages</a></li>
+      <li><a href="#objective">Objective</a></li>
+    </ul>
+  </nav>
 
   <!-- Profile Picture + Summary -->
   <div class="profile-pic-wrapper">
-    <img src="./imags/profile.jpg" alt="Profile Picture" class="profile-pic"/>
+    <img src="./imags/profile.jpg" class="profile-pic">
+
     <div class="personal-summary">
       <p>
-        I'm a Computer Science student at the Faculty of Computers and Artificial Intelligence.  
-        Passionate about front-end development and creative user interfaces.  
-        I aim to become a Full Stack Developer and bring impactful digital experiences to life.
+        I am a student at the Faculty of Computers and Artificial Intelligence, specializing in Cybersecurity with strong interest in networks, programming, and databases.
+        I work to develop my skills in building secure and efficient systems, protecting digital infrastructure, and improving information system performance.
       </p>
     </div>
 
-    <!-- ✅ Download CV Button -->
     <div class="cv-download-box">
       <a href="./cv/Shaher_CV.pdf" download class="download-btn">
         <i class="fa-solid fa-file-arrow-down"></i> Download CV (PDF)
@@ -47,7 +50,7 @@
     </div>
   </div>
 
-  <!-- Main Content -->
+  <!-- Main content -->
   <main class="container">
 
     <!-- Education -->
@@ -63,17 +66,61 @@
     <!-- Skills -->
     <section id="skills">
       <h2>Skills</h2>
+
       <ul>
-        <li>Software: Excel, PowerPoint, Word, GitHub</li>
+        <li>Software: Excel, PowerPoint, Word, GitHub, VSCode</li>
         <li>Soft Skills: Communication, Leadership, Teamwork</li>
       </ul>
+
       <h3>Programming Languages</h3>
-      <div class="lang-icons">
-        <i class="fa-brands fa-html5" title="HTML5"></i>
-        <i class="fa-brands fa-css3-alt" title="CSS3"></i>
-        <i class="fa-brands fa-js" title="JavaScript"></i>
-        <i class="fa-brands fa-python" title="Python"></i>
-        <i class="fa-solid fa-code" title="C / Java"></i>
+
+      <div class="lang-box">
+
+        <div class="lang-item">
+          <i class="fa-solid fa-c"></i>
+          <p>C</p>
+        </div>
+
+        <div class="lang-item">
+          <i class="fa-solid fa-c"></i>
+          <p>C++</p>
+        </div>
+
+        <div class="lang-item">
+          <i class="fa-brands fa-java"></i>
+          <p>Java</p>
+        </div>
+
+        <div class="lang-item">
+          <i class="fa-brands fa-js"></i>
+          <p>JavaScript</p>
+        </div>
+
+        <div class="lang-item">
+          <i class="fa-brands fa-golang"></i>
+          <p>Go</p>
+        </div>
+
+        <div class="lang-item">
+          <i class="fa-brands fa-python"></i>
+          <p>Python</p>
+        </div>
+
+        <div class="lang-item">
+          <i class="fa-solid fa-database"></i>
+          <p>SQL</p>
+        </div>
+
+        <div class="lang-item">
+          <i class="fa-brands fa-html5"></i>
+          <p>HTML</p>
+        </div>
+
+        <div class="lang-item">
+          <i class="fa-brands fa-css3-alt"></i>
+          <p>CSS</p>
+        </div>
+
       </div>
     </section>
 
@@ -82,7 +129,7 @@
       <h2>Projects</h2>
 
       <div class="project-card">
-        <img src="./imags/education.png" alt="Project Image">
+        <img src="./imags/education.png">
         <h3>Thanaweya Platform</h3>
         <p>A full educational platform for high school students in Science & Math tracks.</p>
         <a class="visit-btn" href="https://shaher06.github.io/IT_Project/" target="_blank">Visit Project</a>
@@ -92,15 +139,29 @@
     <!-- Certificates -->
     <section id="certificates">
       <h2>Certificates</h2>
-      <div class="certificate-box">
-        <p><strong>Mashwari Training - Cairo</strong></p>
-        <p>Certified program focused on youth development and career skills.</p>
 
-        <div class="cert-img-box">
-          <img src="./imags/mmm.jpeg" alt="Certificate Image" class="certificate-img"/>
-         
+      <div class="cert-grid">
+
+        <div class="cert-card">
+          <h3>Network Fundamentals</h3>
+          <p>Basics of networks and infrastructure.</p>
+          <img src="./imags/network_cert.jpg" class="cert-photo">
         </div>
+
+        <div class="cert-card">
+          <h3>Ethical Hacking</h3>
+          <p>Certified in Ethical Hacking & Cybersecurity.</p>
+          <img src="./imags/ethical_cert.jpg" class="cert-photo">
+        </div>
+
+        <div class="cert-card">
+          <h3>Ubuntu Linux Essentials</h3>
+          <p>Linux system administration & security basics.</p>
+          <img src="./imags/linux_cert.jpg" class="cert-photo">
+        </div>
+
       </div>
+
     </section>
 
     <!-- Languages -->
@@ -110,7 +171,6 @@
         <li>Arabic – Native</li>
         <li>English – Very Good</li>
         <li>French – Good</li>
-        <li>Turkish – Beginner</li>
       </ul>
     </section>
 
@@ -118,28 +178,29 @@
     <section id="objective">
       <h2>Objective</h2>
       <p>
-        I’m a computer science student and Front-End Developer aiming to become Full Stack.  
-        I focus on continuous learning and impactful tech projects.
+        I am a Cybersecurity student passionate about networks, Linux, ethical hacking, and programming.
+        I aim to become a professional in system security, vulnerability analysis, and secure infrastructure development.
       </p>
     </section>
 
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="contact">
-      <h3>Contact Us</h3>
-      <p>Email: 
-        <a href="https://mail.google.com/mail/?view=cm&to=shahirbenmoussa06@gmail.com" target="_blank">
-          shahirbenmoussa06@gmail.com
-        </a>
+      <h3>Contact</h3>
+      <p>Email:
+        <a href="mailto:shahirbenmoussa06@gmail.com">shahirbenmoussa06@gmail.com</a>
       </p>
       <p>Phone: 01222157411</p>
+
       <div class="social">
         <a href="https://www.facebook.com/share/16iT5nYxtf/"><i class="fab fa-facebook"></i></a>
         <a href="https://www.linkedin.com/in/shaher-moussa-a9777233b"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/Shaher06"><i class="fab fa-github"></i></a>
       </div>
     </div>
+
     <p class="copyright">© 2025 Shaher Mamdouh. All rights reserved.</p>
   </footer>
 
