@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +12,7 @@ body {
   line-height: 1.7;
 }
 
-/* HEADER */
+
 .main-header {
   background-color: #0f172a;
   color: white;
@@ -29,10 +30,9 @@ body {
   font-style: italic;
 }
 
-/* NAVBAR */
 .navbar {
   background: #1e293b;
-  padding: 12px 20px;
+  padding: 12px 15px;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -41,41 +41,26 @@ body {
 .navbar ul {
   display: flex;
   justify-content: center;
-  gap: 25px;
-  list-style: none;
+  gap: 22px;
+  flex-wrap: wrap;
 }
 .navbar ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
-  position: relative;
 }
 .navbar ul li a:hover {
   color: #4ade80;
 }
-.navbar ul li a::after {
-  content: "";
-  width: 0;
-  height: 2px;
-  background: #4ade80;
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  transition: 0.4s;
-}
-.navbar ul li a:hover::after {
-  width: 100%;
-}
 
-/* PROFILE */
 .profile-pic-wrapper {
   text-align: center;
-  padding: 30px 20px;
+  padding: 25px 20px;
 }
 .profile-pic {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   border: 6px solid #4ade80;
   object-fit: cover;
@@ -84,7 +69,6 @@ body {
 }
 .profile-pic:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 40px rgba(0,255,120,0.7);
 }
 
 .personal-summary {
@@ -92,9 +76,9 @@ body {
   margin: 20px auto;
   color: #334155;
   font-size: 17px;
+  padding: 0 10px;
 }
 
-/* DOWNLOAD CV */
 .cv-download-box {
   text-align: center;
   margin-top: 20px;
@@ -111,26 +95,21 @@ body {
 }
 .download-btn:hover {
   transform: scale(1.08);
-  background: #22c55e;
 }
 
-/* SECTIONS */
+/* CONTAINER */
 .container {
   max-width: 900px;
   margin: auto;
   padding: 40px 20px;
 }
+
 section {
   background: white;
-  padding: 30px;
-  margin-bottom: 35px;
+  padding: 25px;
+  margin-bottom: 30px;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-  transition: 0.3s;
-}
-section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 25px rgba(0,0,0,0.1);
 }
 h2 {
   text-align: center;
@@ -140,49 +119,45 @@ h2 {
   font-weight: bold;
 }
 
-/* PROGRAMMING LANGUAGES */
 .lang-box {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 22px;
+  gap: 18px;
   margin-top: 20px;
 }
 .lang-item {
-  width: 110px;
-  height: 120px;
+  width: 95px;
+  height: 110px;
   background: #eff6ff;
   border-radius: 12px;
   text-align: center;
-  padding: 14px;
+  padding: 12px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.07);
   transition: 0.3s;
 }
 .lang-item:hover {
-  transform: scale(1.12) translateY(-6px);
-  background: #dbeafe;
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  transform: scale(1.1);
 }
 .lang-item i {
-  font-size: 35px;
+  font-size: 32px;
   margin-bottom: 5px;
   color: #2563eb;
 }
 .lang-item p {
   font-weight: bold;
+  font-size: 14px;
 }
 
-/* PROJECTS */
 .project-card {
   text-align: center;
   background: #f1f5f9;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.07);
 }
 .project-card img {
   width: 100%;
-  max-width: 320px;
+  max-width: 330px;
   border-radius: 10px;
   transition: 0.3s;
 }
@@ -190,53 +165,34 @@ h2 {
   transform: scale(1.05);
 }
 
-/* CERTIFICATES */
 .cert-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+  gap: 20px;
 }
 .cert-card {
   background: white;
-  border-radius: 12px;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: 0.3s;
-}
-.cert-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  border-radius: 12px;
 }
 .cert-photo {
   width: 100%;
-  max-width: 260px;
+  max-width: 250px;
   border-radius: 10px;
-  border: solid 2px #1e293b;
-  transition: 0.3s;
-}
-.cert-photo:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(34,197,94,0.5);
 }
 
-/* FOOTER */
 .footer {
   background: #1f2937;
   color: white;
   text-align: center;
-  padding: 40px 20px;
+  padding: 30px 20px;
   margin-top: 40px;
 }
 .footer a {
   color: #4ade80;
 }
 .footer .social a {
-  font-size: 28px;
+  font-size: 26px;
   margin: 0 10px;
-  transition: 0.3s;
-}
-.footer .social a:hover {
-  color: #22c55e;
-  transform: scale(1.2);
 }
