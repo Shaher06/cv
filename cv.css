@@ -1,3 +1,4 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -6,225 +7,189 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f9fafb;
+  background: #f9fafb;
   color: #1f2937;
   line-height: 1.7;
 }
 
 /* HEADER */
 .main-header {
-  background-color: #0f172a;
-  color: white;
+  background: #0f172a;
+  color: #fff;
   text-align: center;
-  padding: 35px 20px;
+  padding: 40px 20px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 .main-header h1 {
   font-size: 38px;
 }
 .main-header p {
-  font-size: 17px;
+  font-size: 18px;
   color: #4ade80;
 }
 
 /* NAVBAR */
 .navbar {
   background: #1e293b;
-  padding: 12px;
+  padding: 12px 20px;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 999;
 }
 .navbar ul {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 22px;
   list-style: none;
 }
-.navbar ul a {
+.navbar ul li a {
+  font-weight: bold;
   color: white;
   text-decoration: none;
-  font-weight: bold;
-  transition: .3s;
+  transition: 0.3s;
 }
-.navbar ul a:hover {
+.navbar ul li a:hover {
   color: #4ade80;
 }
 
 /* PROFILE */
 .profile-pic-wrapper {
   text-align: center;
-  padding: 30px 20px;
+  padding: 25px 20px;
 }
 .profile-pic {
-  width: 190px;
-  height: 190px;
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
   border: 5px solid #4ade80;
   object-fit: cover;
+  box-shadow: 0 0 25px rgba(0,255,120,0.5);
+  transition: 0.3s;
 }
+.profile-pic:hover {
+  transform: scale(1.05);
+}
+
 .personal-summary {
-  max-width: 720px;
-  margin: 15px auto;
+  max-width: 750px;
+  margin: 20px auto;
   font-size: 17px;
   color: #334155;
+  padding: 0 10px;
 }
 
-/* DOWNLOAD BUTTON */
-.cv-download-box {
-  margin-top: 15px;
-}
-.download-btn {
-  background: #4ade80;
-  padding: 12px 25px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #0f172a;
-  font-weight: bold;
-  display: inline-block;
-  transition: .3s;
-}
-.download-btn:hover {
-  transform: scale(1.07);
-  background: #22c55e;
-}
-
-/* CONTAINER */
+/* SECTION */
 .container {
   max-width: 900px;
   margin: auto;
-  padding: 20px;
+  padding: 30px 20px;
 }
-
 section {
-  background: white;
-  margin-top: 25px;
-  padding: 25px;
+  background: #fff;
+  margin-bottom: 35px;
+  padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
 }
 h2 {
   text-align: center;
-  margin-bottom: 15px;
-  color: #0f172a;
-  font-size: 26px;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-/* 📌 PROGRAMMING LANGUAGES GRID + SCROLL ANIMATION */
+/* PROGRAMMING LANGUAGES - CIRCLES */
 .lang-box {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
-  gap: 15px;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 20px;
   margin-top: 20px;
+  padding: 10px;
 }
 
 .lang-item {
-  width: 95px;
-  height: 110px;
-  background: #eff6ff;
-  border-radius: 12px;
-  text-align: center;
-  padding: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.07);
-
-  /* Animation - CSS Only */
+  background: #eef2ff;
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.35s;
   opacity: 0;
-  transform: translateY(40px) scale(0.8);
-  animation: reveal 0.8s ease-out forwards;
-  animation-timeline: view();
-  animation-range: entry 20% cover 40%;
+  transform: translateY(25px);
+}
+
+.lang-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lang-item:hover {
+  background: #dbeafe;
+  transform: translateY(-8px) scale(1.08);
 }
 
 .lang-item i {
-  font-size: 30px;
+  font-size: 28px;
   color: #2563eb;
 }
+
 .lang-item p {
   margin-top: 5px;
+  font-size: 13px;
   font-weight: bold;
-  font-size: 14px;
 }
 
-@keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(40px) scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+/* CERTIFICATES SLIDER */
+.cert-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
-/* CERTIFICATES */
-.cert-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+.cert-slider {
+  display: flex;
   gap: 20px;
+  transition: 0.5s ease;
+  padding: 10px;
 }
-.cert-card {
-  text-align: center;
-  background: white;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.07);
 
-  /* Same scroll animation */
-  opacity: 0;
-  transform: translateY(40px);
-  animation: reveal 0.8s ease-out forwards;
-  animation-timeline: view();
-  animation-range: entry 20% cover 40%;
+.cert-card {
+  min-width: 250px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s;
 }
+.cert-card:hover {
+  transform: translateY(-6px);
+}
+
 .cert-photo {
   width: 100%;
-  border-radius: 12px;
-  border: solid 2px #1e293b;
-}
-
-/* OBJECTIVE */
-section p {
-  font-size: 16px;
-  color: #334155;
-  text-align: center;
+  border-radius: 10px;
+  border: 2px solid #1e293b;
 }
 
 /* FOOTER */
 .footer {
-  background: #0f172a;
+  background: #1f2937;
+  padding: 35px 20px;
   color: white;
-  padding: 40px 20px;
   text-align: center;
-  margin-top: 40px;
 }
 
-/* RESPONSIVE FIX FOR MOBILE */
+/* RESPONSIVE FIXES – PERFECT MOBILE */
 @media (max-width: 600px) {
-  .profile-pic {
-    width: 150px;
-    height: 150px;
-  }
-
-  .lang-item {
-    width: 85px;
-    height: 95px;
-    padding: 10px;
-  }
-
-  .lang-item i {
-    font-size: 26px;
-  }
-
-  .lang-item p {
-    font-size: 12px;
-  }
-
-  section {
-    padding: 18px;
-  }
-
-  h2 {
-    font-size: 22px;
-  }
+  .main-header h1 { font-size: 28px; }
+  .profile-pic { width: 140px; height: 140px; }
+  .lang-box { grid-template-columns: repeat(3,1fr); }
+  .lang-item { width: 80px; height: 80px; }
+  .lang-item i { font-size: 24px; }
+  h2 { font-size: 20px; }
 }
