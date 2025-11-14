@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +11,7 @@ body {
   line-height: 1.7;
 }
 
-
+/* HEADER */
 .main-header {
   background-color: #0f172a;
   color: white;
@@ -21,111 +20,105 @@ body {
   box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 .main-header h1 {
-  font-size: 40px;
-  margin-bottom: 8px;
+  font-size: 38px;
 }
 .main-header p {
-  font-size: 18px;
+  font-size: 17px;
   color: #4ade80;
-  font-style: italic;
 }
 
+/* NAVBAR */
 .navbar {
   background: #1e293b;
-  padding: 12px 15px;
+  padding: 12px;
   position: sticky;
   top: 0;
-  z-index: 999;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  z-index: 1000;
 }
 .navbar ul {
   display: flex;
   justify-content: center;
-  gap: 22px;
-  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
 }
-.navbar ul li a {
+.navbar ul a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.3s;
+  transition: .3s;
 }
-.navbar ul li a:hover {
+.navbar ul a:hover {
   color: #4ade80;
 }
 
+/* PROFILE */
 .profile-pic-wrapper {
   text-align: center;
-  padding: 25px 20px;
+  padding: 30px 20px;
 }
 .profile-pic {
-  width: 180px;
-  height: 180px;
+  width: 190px;
+  height: 190px;
   border-radius: 50%;
-  border: 6px solid #4ade80;
+  border: 5px solid #4ade80;
   object-fit: cover;
-  box-shadow: 0 0 25px rgba(0,255,120,0.5);
-  transition: 0.3s;
 }
-.profile-pic:hover {
-  transform: scale(1.05);
-}
-
 .personal-summary {
-  max-width: 750px;
-  margin: 20px auto;
-  color: #334155;
+  max-width: 720px;
+  margin: 15px auto;
   font-size: 17px;
-  padding: 0 10px;
+  color: #334155;
 }
 
+/* DOWNLOAD BUTTON */
 .cv-download-box {
-  text-align: center;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 .download-btn {
   background: #4ade80;
   padding: 12px 25px;
-  font-weight: bold;
   border-radius: 10px;
-  color: #1e293b;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   text-decoration: none;
-  transition: 0.3s;
+  color: #0f172a;
+  font-weight: bold;
+  display: inline-block;
+  transition: .3s;
 }
 .download-btn:hover {
-  transform: scale(1.08);
+  transform: scale(1.07);
+  background: #22c55e;
 }
 
 /* CONTAINER */
 .container {
   max-width: 900px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 20px;
 }
 
 section {
   background: white;
+  margin-top: 25px;
   padding: 25px;
-  margin-bottom: 30px;
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
 }
 h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   color: #0f172a;
   font-size: 26px;
-  font-weight: bold;
 }
 
+/* 📌 PROGRAMMING LANGUAGES GRID + SCROLL ANIMATION */
 .lang-box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+  gap: 15px;
+  justify-items: center;
   margin-top: 20px;
 }
+
 .lang-item {
   width: 95px;
   height: 110px;
@@ -134,65 +127,104 @@ h2 {
   text-align: center;
   padding: 12px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.07);
-  transition: 0.3s;
+
+  /* Animation - CSS Only */
+  opacity: 0;
+  transform: translateY(40px) scale(0.8);
+  animation: reveal 0.8s ease-out forwards;
+  animation-timeline: view();
+  animation-range: entry 20% cover 40%;
 }
-.lang-item:hover {
-  transform: scale(1.1);
-}
+
 .lang-item i {
-  font-size: 32px;
-  margin-bottom: 5px;
+  font-size: 30px;
   color: #2563eb;
 }
 .lang-item p {
+  margin-top: 5px;
   font-weight: bold;
   font-size: 14px;
 }
 
-.project-card {
-  text-align: center;
-  background: #f1f5f9;
-  padding: 20px;
-  border-radius: 12px;
-}
-.project-card img {
-  width: 100%;
-  max-width: 330px;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-.project-card img:hover {
-  transform: scale(1.05);
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
+/* CERTIFICATES */
 .cert-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 20px;
 }
 .cert-card {
-  background: white;
-  padding: 20px;
   text-align: center;
+  background: white;
+  padding: 15px;
   border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+
+  /* Same scroll animation */
+  opacity: 0;
+  transform: translateY(40px);
+  animation: reveal 0.8s ease-out forwards;
+  animation-timeline: view();
+  animation-range: entry 20% cover 40%;
 }
 .cert-photo {
   width: 100%;
-  max-width: 250px;
-  border-radius: 10px;
+  border-radius: 12px;
+  border: solid 2px #1e293b;
 }
 
-.footer {
-  background: #1f2937;
-  color: white;
+/* OBJECTIVE */
+section p {
+  font-size: 16px;
+  color: #334155;
   text-align: center;
-  padding: 30px 20px;
+}
+
+/* FOOTER */
+.footer {
+  background: #0f172a;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
   margin-top: 40px;
 }
-.footer a {
-  color: #4ade80;
-}
-.footer .social a {
-  font-size: 26px;
-  margin: 0 10px;
+
+/* RESPONSIVE FIX FOR MOBILE */
+@media (max-width: 600px) {
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+  }
+
+  .lang-item {
+    width: 85px;
+    height: 95px;
+    padding: 10px;
+  }
+
+  .lang-item i {
+    font-size: 26px;
+  }
+
+  .lang-item p {
+    font-size: 12px;
+  }
+
+  section {
+    padding: 18px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
 }
