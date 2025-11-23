@@ -1,17 +1,12 @@
-/* =========================
-   cv.css — Tech Animations Pack
-   Author: Shaher Revamp
-   ========================= */
 
-/* --- Variables --- */
 :root{
   --bg: #070812;
   --panel: #0b1220;
   --card: #0f1726;
   --muted: #9aa4b2;
   --text: #e6eef6;
-  --accent: #06b6d4;      /* cyan */
-  --accent-2: #22c55e;    /* green */
+  --accent: #06b6d4;     
+  --accent-2: #22c55e;   
   --neon: rgba(6,182,212,0.14);
   --glass: rgba(255,255,255,0.03);
   --radius-lg: 14px;
@@ -397,3 +392,4 @@ a:focus, button:focus{
     transform: none !important;
   }
 }
+
